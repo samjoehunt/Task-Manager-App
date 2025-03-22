@@ -1,20 +1,36 @@
 package app.scene.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
+import javafx.scene.text.Text;
 
 public class LoginController {
 
     @FXML
     private StackPane root; // Root container in the FXML
 
-    private Stage stage;
+    @FXML
+    private Text loginFailureText;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    @FXML
+    public void authenticateUser() {
+
+    }
+
+    @FXML
+    public void dashboardScene() {
+
+    }
+
+    @FXML
+    public void accountCreationScene() {
+        SceneController.switchScene("/app/scene/accountCreation.fxml");
     }
 }
 
