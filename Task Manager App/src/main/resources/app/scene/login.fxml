@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="app.scene.controllers.LoginController"
+           fx:id="root">
+
+    <VBox alignment="CENTER" spacing="10">
+        <Text text="Task Manager" style="-fx-font-size: 48px"/>
+        <Text text="Login to your account" style="-fx-font-size: 24px"/>
+        <TextField fx:id="usernameField" promptText="Username" prefWidth="250" maxWidth="250"/>
+        <PasswordField fx:id="passwordField" promptText="Password" prefWidth="250" maxWidth="250"/>
+        <Button fx:id="loginButton" text="Login"/>
+        <Button fx:id="createAccountButton" text="Create new account"
+                style="-fx-background-color: transparent;
+               -fx-border-color: transparent;
+               -fx-text-fill: grey;
+               -fx-font-size: 14px;
+               -fx-padding: 0;
+               -fx-cursor: hand;"/>
+    </VBox>
+
+</StackPane>
