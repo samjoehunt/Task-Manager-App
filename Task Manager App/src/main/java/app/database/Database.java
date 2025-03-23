@@ -33,7 +33,7 @@ public class Database {
                     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
                     username TEXT NOT NULL,
                     email TEXT NOT NULL,
-                    password TEXT NOT NULL,
+                    password TEXT NOT NULL
                 );
                 CREATE TABLE IF NOT EXISTS tasks (
                     task_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -87,6 +87,27 @@ public class Database {
         } catch (SQLException e) {
             System.out.println("Error dropping table: " + e.getMessage());
         }
+    }
+
+    /**
+     * Function to identify if a user exists in the users table
+     * @param username Username of the user to check
+     * @return Boolean value indicating the specified user's existence in users.
+     */
+    public static boolean userExists(String username) {
+        String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql);) {
+            preparedStatement.setString(1, username);
+            ResultSet users = preparedStatement.executeQuery();
+            if (users.next()) {
+                return (users.getInt(1) > 0);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error finding user: " + e.getMessage());
+        }
+        return false;
     }
 
     /**
