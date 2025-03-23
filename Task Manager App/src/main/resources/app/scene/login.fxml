@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Text?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="app.scene.controllers.LoginController"
-           fx:id="root">
+           fx:controller="app.scene.controllers.LoginController">
 
     <VBox alignment="CENTER" spacing="10">
         <Text text="Task Manager" style="-fx-font-size: 48px"/>

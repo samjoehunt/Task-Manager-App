@@ -14,12 +14,19 @@
 
     <VBox alignment="CENTER" spacing="10">
         <Text text="Create Account" style="-fx-font-size: 48px"/>
-        <Text fx:id="loginFailureText" text="Please enter a valid username and password!" visible="false" managed="false"
+        <Text fx:id="invalidCredentialsFailureText" text="Please enter a valid email, username and password!" visible="false" managed="false"
               style="-fx-font-size: 14px;
                      -fx-fill: red;"/>
+        <Text fx:id="takenUsernameFailureText" text="Username already in use. Please choose another." visible="false" managed="false"
+              style="-fx-font-size: 14px;
+                     -fx-fill: red;"/>
+        <Text fx:id="invalidEmailFailureText" text="Please enter a valid email." visible="false" managed="false"
+              style="-fx-font-size: 14px;
+                     -fx-fill: red;"/>
+        <TextField fx:id="emailField" promptText="Email" prefWidth="250" maxWidth="250"/>
         <TextField fx:id="usernameField" promptText="Username" prefWidth="250" maxWidth="250"/>
         <PasswordField fx:id="passwordField" promptText="Password" prefWidth="250" maxWidth="250"/>
-        <Button text="Create Account"/>
+        <Button text="Create Account" onAction="#createAccount"/>
         <Button text="Return to login" onAction="#loginScene"
                 style="-fx-background-color: transparent;
                -fx-border-color: transparent;

@@ -5,14 +5,10 @@ import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class LoginController {
-
-    @FXML
-    private StackPane root; // Root container in the FXML
 
     @FXML
     private Text loginFailureText;
@@ -21,6 +17,10 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    /**
+     * Method to authenticate a user by their login details. If the details are correct, the scene is switched
+     * to the dashboard scene. If not, an error is displayed, informing the user that their login attempt failed.
+     */
     @FXML
     public void authenticateUser() {
         if (Database.authenticateUser(usernameField.getText(), passwordField.getText())) {
@@ -30,11 +30,17 @@ public class LoginController {
         }
     }
 
+    /**
+     * Method to switch the current scene to the dashboard scene.
+     */
     @FXML
     public void dashboardScene() {
-
+        SceneController.switchScene("/app/scene/dashboard.fxml");
     }
 
+    /**
+     * Method to switch the current scene to the account creation scene.
+     */
     @FXML
     public void accountCreationScene() {
         SceneController.switchScene("/app/scene/accountCreation.fxml");
